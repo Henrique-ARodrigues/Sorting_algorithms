@@ -17,28 +17,25 @@ void Intercalar(int arr[], int inicio1, int inicio2, int fim2, int* comp, int* s
         }else {
             tmp[k] = arr[j];
             j++;
+            (*swap)++;
         }
         k++;
-        (*swap)++;
     }
 
     while (i <= fim1) {
         tmp[k] = arr[i];
         i++;
         k++;
-        (*swap)++;
     }
 
     while (j <= fim2) {
         tmp[k] = arr[j];
         j++;
         k++;
-        (*swap)++;
     }
 
     for (int m = 0; m < tamanho; m++) {
         arr[inicio1 + m] = tmp[m];
-        (*swap)++;
     }
 
 }

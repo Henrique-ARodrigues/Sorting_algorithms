@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Bubble.h"
+#include "Bubble_sort.h"
 
 
 void Bubble_sort(int arr[], int n, int* comp, int* swap) {

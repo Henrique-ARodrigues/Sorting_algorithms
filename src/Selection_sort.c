@@ -14,9 +14,11 @@ void Selection_sort(int arr[], int n, int* comp, int* swap) {
             }
         }
         
-        aux = arr[atualM];
-        arr[atualM] = arr[i];
-        arr[i] = aux;
-        (*swap)++;
+        if (atualM != i) {
+            aux = arr[atualM];
+            arr[atualM] = arr[i];
+            arr[i] = aux;
+            (*swap)++;
+        }
     }
 }

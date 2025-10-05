@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Quick_sort.h"
 
-void swap(int *a, int *b, int *swap) {
+void troca(int *a, int *b, int *swap) {
     int tmp = *a;
     *a = *b;
     *b = tmp;
@@ -13,15 +13,15 @@ int acharMedianaDeTres(int arr[], int esquerda, int direita, int *comp, int *swa
 
     (*comp)++;
     if (arr[esquerda] > arr[meio])
-        swap(&arr[esquerda], &arr[meio], swap);
+        troca(&arr[esquerda], &arr[meio], swap);
 
     (*comp)++;
     if (arr[esquerda] > arr[direita])
-        swap(&arr[esquerda], &arr[direita], swap);
+        troca(&arr[esquerda], &arr[direita], swap);
 
     (*comp)++;
     if (arr[meio] > arr[direita])
-        swap(&arr[meio], &arr[direita], swap);
+        troca(&arr[meio], &arr[direita], swap);
 
     return meio; // indice da mediana
 }
@@ -30,7 +30,7 @@ int particionar(int arr[], int esquerda, int direita, int *comp, int *swap) {
     int i_mediana = acharMedianaDeTres(arr, esquerda, direita, comp, swap);
     int pivo = arr[i_mediana];
 
-    swap(&arr[i_mediana], &arr[direita], swap); // coloca o pivo no fim
+    troca(&arr[i_mediana], &arr[direita], swap); // coloca o pivo no fim
 
     int i = esquerda;
     int j = direita - 1;
@@ -49,13 +49,13 @@ int particionar(int arr[], int esquerda, int direita, int *comp, int *swap) {
         }
 
         if (j >= i) {
-            swap(&arr[i], &arr[j], swap);
+            troca(&arr[i], &arr[j], swap);
             i++;
             j--;
         }
     }
 
-    swap(&arr[i], &arr[direita], swap); // coloca o pivo na posicao final
+    troca(&arr[i], &arr[direita], swap); // coloca o pivo na posicao final
     return i; // retorna o indice do pivo
 }
 
