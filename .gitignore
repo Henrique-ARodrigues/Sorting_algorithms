@@ -1,0 +1,10 @@
+# Arquivos de build
+*.o
+*.out
+*.exe
+
+# Arquivos temporários
+.~lock.*
+*.swp
+
+
